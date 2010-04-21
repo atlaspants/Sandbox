@@ -1,0 +1,42 @@
+<project name="ProjectZero" default="build">
+ <target name="clean">
+  <delete dir="${basedir}/build"/>
+ </target>
+
+ <target name="prepare">
+  <mkdir dir="${basedir}/build/logs"/>
+  <copy todir="${basedir}/build">
+    <fileset dir="${basedir}">
+      <exclude name="**/*.xml"/>
+      <exclude name="build"/>
+      <exclude name="build/**"/>
+    </fileset>
+  </copy>
+
+ </target>
+
+ <target name="phpunit">
+  <echo message="Running tests..." />
+  <exec dir="${basedir}" executable="phpunit" failonerror="true">
+   <arg line="--log-xml ${basedir}/build/logs/phpunit.xml BaseTests" />
+  </exec>
+ </target>
+ 
+ <target name="dist" depends="phpunit">
+        <echo message="Creating archive..." />
+
+        <tar destfile="./build/build.tar.gz" compression="gzip">
+            <fileset dir="./build">
+                <include name="*" />
+            </fileset>
+        </tar>
+
+        <echo message="Files copied and compressed in build directory OK!" />
+  </target>
+  
+ <target name="ftp">
+	<exec executable="${basedir}/ftpscript.sh"></exec>
+ </target>
+
+ <target name="build" depends="clean,prepare,phpunit,dist"/>
+</project>
