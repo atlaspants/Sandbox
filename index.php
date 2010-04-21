@@ -17,7 +17,9 @@ $thisPage = substr($me, $lastSlash + 1);
 <div id="gears"><img src="img/gearsAnimated.gif" /></div>
 <div id="title">Deployment Example</div>
 <div id="identity"><span class="label">Server:</span>&nbsp;&nbsp;&nbsp;&nbsp;<? echo file_get_contents('./identity.txt'); ?></div>
-<div id="updated"><span class="label">Updated:</span>&nbsp;&nbsp;<? echo date ("m/d H:i:s a", filemtime($thisPage)); ?></div>
+<!--<div id="updated"><span class="label">Updated:</span>&nbsp;&nbsp;<? //echo date ("m/d H:i:s a", filemtime($thisPage)); ?></div>-->
+
+<div id="updated"><span class="label">Updated:</span>&nbsp;&nbsp;<? echo date ("m/d H:i:s a"); ?></div>
 
 </body>
 </html>
