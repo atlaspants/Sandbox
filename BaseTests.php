@@ -6,7 +6,8 @@ class BaseTests extends PHPUnit_Framework_TestCase
 	// FAIL ME!
 	public function testFileExists()
     {
-        $this->assertFileExists('index.php');
+        $this->assertFileExists('nonexistent.php');
+        //$this->assertFileExists('index.php');
     }
 	
 	// testPushAndPop
