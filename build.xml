@@ -38,5 +38,6 @@
 	<exec executable="${basedir}/ftpscript.sh"></exec>
  </target>
 
- <target name="build" depends="clean,prepare,phpunit,dist"/>
+ 
+ <target name="build" depends="clean,prepare,dist"/>
 </project>
