@@ -22,7 +22,7 @@
   </exec>
  </target>
  
- <target name="dist" depends="phpunit">
+ <target name="dist">
         <echo message="Creating archive..." />
 
         <tar destfile="./build/build.tar.gz" compression="gzip">
