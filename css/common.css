@@ -1,0 +1,10 @@
+/*  COMMON CSS  */
+
+body {margin: 0px; font-family: Verdana, sans-serif; font-size: 16px; color: #222222;}
+
+#gears {opacity: 0.2;}
+#title {position: absolute; left: 20px; top: 20px; font-size: 24px; color: #777777; text-decoration: underline;}
+#identity {position: absolute; left: 20px; top: 80px;}
+#updated {position: absolute; left: 20px; top: 120px;}
+
+.label {color: #777777;}
