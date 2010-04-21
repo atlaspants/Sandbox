@@ -35,7 +35,9 @@
   </target>
   
  <target name="ftp">
-	<exec executable="${basedir}/ftpscript.sh"></exec>
+	<exec executable="touch">
+		<arg value="index.php"/>
+	</exec>
  </target>
 
  
